@@ -13,14 +13,14 @@ makeCacheMatrix <- function(x = matrix()) {
     inverse <<- NULL
   }
   
-  #the second function called "get" will get the value of the matrix
+  #the second function called "get" will return the value of the matrix
   get <- function() x
   
   #the third function called "setinverse" will set the value of the inverse of the matrix
   # it uses the function solve
   setinverse <- function(solve) inverse <<- solve
   
-  #the fourth function called "getinverse" will get the value of the inverse of the matrix
+  #the fourth function called "getinverse" will return the value of the inverse of the matrix
   getinverse <- function() inverse
   
   #below is the instruction that returns a list of the 4 functions defined above
@@ -33,7 +33,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
-  inverse <- x['getinverse()'] #this works
+  inverse <- x['getinverse()'] #this works but returns NA in inverse and not NULL
+  #inverse <- x$getinverse() - This does not work " x$getinverse : $ operator is invalid for atomic vectors"
   if(!is.null(inverse)) {
     message("getting cached data")
     return(inverse)
