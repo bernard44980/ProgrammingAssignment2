@@ -33,14 +33,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
-  inverse <- x$getinverse() #this does not work : "Error in x$getinverse : $ operator is invalid for atomic vectors"
+  inverse <- x['getinverse()'] #this works
   if(!is.null(inverse)) {
     message("getting cached data")
     return(inverse)
   }
-  data <- x$get()
+  data <- x['get()']
   inverse <- solve(data, ...)
-  x$setinverse(inverse)
+  x['setinverse(inverse)']
   inverse
   
 }
