@@ -3,7 +3,7 @@
 makeCacheMatrix <- function(x = matrix()) {
 	
 #This script is done by bernard44980
-#
+#Date : 20140822
 #
 
 }
